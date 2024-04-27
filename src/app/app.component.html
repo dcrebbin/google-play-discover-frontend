@@ -1,0 +1,47 @@
+<main class="text-white h-full flex flex-col font-sans">
+  <div
+    class="h-20 pl-2 xl:pl-8 flex rounded-b-3xl bg-[#1E1F20] w-full justify-between"
+  >
+    <div class="flex items-center gap-2 w-full h-full">
+      <div class="flex gap-2 items-center w-[25rem]">
+        <img src="assets/google-play-icon.png" alt="logo" class="h-8" />
+        <h1 class="text-2xl text-white flex w-[16rem]">Google Play Discover</h1>
+      </div>
+      <div class="flex gap-4 ml-4 h-full items-center w-fit justify-start">
+        <a href="" class="w-max">
+          <p>Games</p>
+        </a>
+        <a
+          href=""
+          class="text-green-500 border-b-2 border-green-500 h-full pt-[7.2%] w-max"
+        >
+          <p>Apps</p>
+        </a>
+        <a href="" class="w-max">
+          <p>Movies & TV</p>
+        </a>
+        <a href="">
+          <p>Books</p>
+        </a>
+        <a href="">
+          <p>Kids</p>
+        </a>
+      </div>
+      <div class="w-full h-full flex">
+        <chat-pane></chat-pane>
+      </div>
+      <a href="https://gemini.google.com/app">
+        <div
+          class="border-blue-400 text-[#788DAF] flex items-center border-solid px-[4px] font-mono p-[2px] border rounded-md mx-10 text-center justify-center w-max"
+        >
+          <h2 class="text-md">Powered by Gemini</h2>
+        </div>
+      </a>
+    </div>
+  </div>
+  <div class="bg-[#131314] h-full w-full mb-10 px-2 2xl:px-32 flex">
+    <div class="flex w-full h-full items-start"></div>
+  </div>
+</main>
+
+<router-outlet />

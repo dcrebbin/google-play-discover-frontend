@@ -1,0 +1,44 @@
+<form [formGroup]="geminiForm" class="w-full h-full flex items-center px-4">
+  <div class="flex items-center h-max w-full justify-center">
+    <div class="w-full flex relative items-center justify-center">
+      <input
+        formControlName="geminiInput"
+        type="text"
+        class="w-full relative h-10 rounded-[2rem] p-4 text-white bg-transparent outline-none outline-[1px] outline-gray-400 hover:outline-white focus:outline-2 focus:outline-blue-400"
+        placeholder="A new way to search Google Play"
+      />
+      <div
+        *ngIf="waitingOnSpeechRecognition"
+        class="absolute right-0 p-2 mx-2 flex items-center"
+      >
+        <mat-icon
+          class="mr-2 animate-spin"
+          width="90"
+          fontIcon="refresh"
+        ></mat-icon>
+      </div>
+      <button
+        *ngIf="!waitingOnSpeechRecognition"
+        [ngClass]="microphoneClass"
+        (click)="interactWithMicrophone()"
+      >
+        <mat-icon
+          width="90"
+          aria-hidden="false"
+          aria-label="Send message to Gemini Coach"
+          fontIcon="microphone"
+        ></mat-icon>
+      </button>
+    </div>
+    <div
+      *ngIf="waitingOnTextResponse"
+      class="px-2 right-0 mx-2 flex items-center"
+    >
+      <mat-icon
+        class="mr-2 animate-spin"
+        width="90"
+        fontIcon="refresh"
+      ></mat-icon>
+    </div>
+  </div>
+</form>
