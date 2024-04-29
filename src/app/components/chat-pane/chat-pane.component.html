@@ -4,7 +4,8 @@
       <input
         formControlName="geminiInput"
         type="text"
-        class="w-full relative h-10 rounded-[2rem] p-4 text-white bg-transparent outline-none outline-[1px] outline-gray-400 hover:outline-white focus:outline-2 focus:outline-blue-400"
+        (keyup.enter)="sendButton()"
+        class="w-full relative h-10 rounded-xl p-4 text-white bg-transparent outline-none outline-[1px] drop-shadow-md outline-gray-400 hover:outline-white focus:outline-2 focus:outline-blue-400"
         placeholder="A new way to search Google Play"
       />
       <div
@@ -17,7 +18,7 @@
           fontIcon="refresh"
         ></mat-icon>
       </div>
-      <button
+      <!-- <button
         *ngIf="!waitingOnSpeechRecognition"
         [ngClass]="microphoneClass"
         (click)="interactWithMicrophone()"
@@ -28,7 +29,7 @@
           aria-label="Send message to Gemini Coach"
           fontIcon="microphone"
         ></mat-icon>
-      </button>
+      </button> -->
     </div>
     <div
       *ngIf="waitingOnTextResponse"

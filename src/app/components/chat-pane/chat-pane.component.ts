@@ -20,7 +20,6 @@ export class ChatPaneComponent {
     private changeDetectorRef: ChangeDetectorRef
   ) {
     console.log('ChatPane.constructor()');
-    // this.speakMessage(0);
   }
 
   public conversation: any[] = [
@@ -32,7 +31,7 @@ export class ChatPaneComponent {
   waitingOnTextResponse = false;
   autoPlayAudio = true;
 
-  public speakMessage(index: number) {    
+  public speakMessage(index: number) {
     this.waitingOnAudio = true;
     this.changeDetectorRef.detectChanges();
     const message = this.conversation[index].message;
@@ -84,6 +83,13 @@ export class ChatPaneComponent {
         );
       };
     });
+  }
+
+  public keyPress(event: any) {
+    console.log(event);
+    if (event.key === 'Enter') {
+      this.sendButton();
+    }
   }
 
   public stopAudio() {
